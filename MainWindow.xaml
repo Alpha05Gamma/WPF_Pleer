@@ -1,0 +1,87 @@
+﻿<mah:MetroWindow x:Class="Player.MainWindow"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:Player"
+        mc:Ignorable="d"
+        Title="Player" Height="450" Width="800">
+    
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="MediaList" SelectionChanged="MediaList_SelectionChanged" >
+            
+        </ListBox>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>                
+                <RowDefinition Height="60"></RowDefinition>
+                <RowDefinition Height="60"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+                <MediaElement Visibility="Hidden" x:Name="player" MediaOpened="Media_MediaOpened" MediaEnded="Media_MediaEnded"></MediaElement>
+                <Image x:Name="Picture" MaxHeight="550"/>
+                <TextBlock x:Name="Name" HorizontalAlignment="Center" Text="Song_Name"></TextBlock>
+                <TextBlock x:Name="Artist" HorizontalAlignment="Center" Text="Song_Artist"></TextBlock>
+                <TextBlock x:Name="Album" HorizontalAlignment="Center" Text="Song_Album"></TextBlock>
+                <TextBlock x:Name="Year" HorizontalAlignment="Center" Text="Song_Year"></TextBlock>
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <Slider x:Name="AudioSlider" Margin="24,0,24,0" Grid.Column="1" TickPlacement="Both" ValueChanged="AudioSlider_ValueChanged"/>
+                
+                <TextBlock x:Name="PassedBlock" Text="00:00" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0"></TextBlock>
+                <TextBlock x:Name="RemainBlock" Text="00:00" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"></TextBlock>
+            </Grid>
+
+            <Grid Grid.Row="2" Margin="0,5,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="PlayButton" Grid.Column="3"  Margin="10,0,10,0" BorderBrush="{x:Null}" Click="PlayButton_Click">
+                    <iconPacks:PackIconFontaudio x:Name="PlayButtonIcon" Kind="Play"/>
+                </Button>
+                <Button x:Name="ForwardButton" Grid.Column="2" Margin="10,0,10,0" BorderBrush="{x:Null}" Click="ForwardButton_Click">
+                    <iconPacks:Fontaudio Kind="Backward"></iconPacks:Fontaudio>
+                </Button>
+                <Button x:Name="BackButton" Grid.Column="4"  Margin="10,0,10,0" BorderBrush="{x:Null}" Click="BackButton_Click">
+                    <iconPacks:Fontaudio Kind="Forward"></iconPacks:Fontaudio>
+                </Button>
+
+                <Button x:Name="MixerButton" Grid.Column="5" Margin="10,0,10,0" BorderBrush="{x:Null}" Click="MixerButton_Click">
+                    <iconPacks:Fontaudio Kind="Shuffle"></iconPacks:Fontaudio>
+                </Button>
+                <Button x:Name="CicleButton" Grid.Column="6" Margin="10,0,10,0" BorderBrush="{x:Null}" Click="CicleButton_Click">
+                    <iconPacks:Fontaudio Kind="Repeat"></iconPacks:Fontaudio>
+                </Button>
+
+                <Button x:Name="DialogButton" Grid.Column="0" Margin="10,0,10,0" BorderBrush="{x:Null}" Click="DialogButton_Click">
+                    <iconPacks:Fontaudio Kind="Open"></iconPacks:Fontaudio>
+                </Button>
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</mah:MetroWindow>
