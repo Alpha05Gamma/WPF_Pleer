@@ -221,7 +221,7 @@ namespace Player
                             Picture.Source = null;
                         }
 
-                        MessageBox.Show(""); //без него не работает, но не понимаю почему
+                        MessageBox.Show("Песня успешно выбрана"); //без него не работает, но не понимаю почему
                         
 
                         AudioSlider.Value = 0;
