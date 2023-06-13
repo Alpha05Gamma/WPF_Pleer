@@ -136,3 +136,7 @@ D:\Рабочий стол\Code\C#\WPF Pleer\Player\bin\Debug\Microsoft.WindowsA
 D:\Рабочий стол\Code\C#\WPF Pleer\Player\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
 D:\Рабочий стол\Code\C#\WPF Pleer\Player\bin\Debug\Microsoft.WindowsAPICodePack.xml
 D:\Рабочий стол\Code\C#\WPF Pleer\Player\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+D:\Рабочий стол\Code\C#\WPF Pleer\Player\bin\Debug\Player.exe.manifest
+D:\Рабочий стол\Code\C#\WPF Pleer\Player\bin\Debug\Player.application
+D:\Рабочий стол\Code\C#\WPF Pleer\Player\obj\Debug\Player.exe.manifest
+D:\Рабочий стол\Code\C#\WPF Pleer\Player\obj\Debug\Player.application

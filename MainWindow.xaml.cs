@@ -30,7 +30,12 @@ namespace Player
         public MainWindow()
         {
             InitializeComponent();
-            
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += timer_Tick;
+            timer.Start();
+
         }
         
 
@@ -221,15 +226,12 @@ namespace Player
                             Picture.Source = null;
                         }
 
-                        MessageBox.Show("Песня успешно выбрана"); //без него не работает, но не понимаю почему
+                       // MessageBox.Show("Песня успешно выбрана"); //без него не работает, но не понимаю почему
                         
 
                         AudioSlider.Value = 0;
                         AudioSlider.Maximum = player.NaturalDuration.TimeSpan.Ticks;
-                        DispatcherTimer timer = new DispatcherTimer();
-                        timer.Interval = TimeSpan.FromSeconds(1);
-                        timer.Tick += timer_Tick;
-                        timer.Start();
+                      
 
 
 
